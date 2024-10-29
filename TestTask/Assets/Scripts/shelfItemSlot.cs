@@ -19,9 +19,12 @@ public class shelfItemSlot : MonoBehaviour
 
     private void Start()
     {
-        CharacterSlot = GetComponent<Button>();
+        CharacterSlot = GetComponent<Button>();  
+    }
+    private void OnEnable()
+    {
         characterCount = PlayerPrefs.GetInt($"characterCount{whichSlotNow}", 0);
-        CharacterCount.text = characterCount.ToString();   
+        CharacterCount.text = characterCount.ToString();
     }
     public void ChandeItemName()
     {
