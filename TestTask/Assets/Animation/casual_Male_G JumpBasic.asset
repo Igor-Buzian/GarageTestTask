@@ -135,7 +135,7 @@ MonoBehaviour:
       Variable: {fileID: 0}
     GravityPower:
       UseConstant: 1
-      ConstantValue: 1
+      ConstantValue: 1.5
       Variable: {fileID: 0}
     StartGravityTime: 15
     AirControl:
@@ -158,7 +158,7 @@ MonoBehaviour:
       Variable: {fileID: 0}
     GravityPower:
       UseConstant: 1
-      ConstantValue: 1
+      ConstantValue: 1.5
       Variable: {fileID: 0}
     StartGravityTime: 15
     AirControl:
@@ -181,7 +181,7 @@ MonoBehaviour:
       Variable: {fileID: 0}
     GravityPower:
       UseConstant: 1
-      ConstantValue: 1
+      ConstantValue: 1.5
       Variable: {fileID: 0}
     StartGravityTime: 15
     AirControl:
