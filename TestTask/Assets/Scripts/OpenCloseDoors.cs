@@ -18,7 +18,9 @@ public class OpenCloseDoors : MonoBehaviour
             Debug.LogWarning("Animator не установлен!");
         }
     }
-
+    /// <summary>
+    /// A method that determines who can use the open or closed method at that moment
+    /// </summary>
     public void Toggle()
     {
         if(corotineIsDone)
@@ -34,7 +36,9 @@ public class OpenCloseDoors : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// Open method which call Trigger Open 
+    /// </summary>
     private void Open()
     {
         isOpen = true;
@@ -47,19 +51,13 @@ public class OpenCloseDoors : MonoBehaviour
             Debug.LogWarning("Animator не установлен!");
         }
     }
-
+    /// <summary>
+    /// Close method which call Trigger Close after 2 seconds 
+    /// (inside the Coroutine)
+    /// </summary>
     private void Close()
     {
         StartCoroutine(WaitCloseTrime());
-      /*  isOpen = false; // Устанавливаем состояние на "закрыто"
-        if (doorAnimator != null)
-        {
-            doorAnimator.SetTrigger("Close"); // Запускаем анимацию закрытия
-        }
-        else
-        {
-            Debug.LogWarning("Animator не установлен!");
-        }*/
     }
     IEnumerator WaitCloseTrime()
     {
