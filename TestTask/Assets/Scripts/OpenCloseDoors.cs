@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class OpenCloseDoors : MonoBehaviour
 {
-    public Animator doorAnimator; // Аниматор для ворот
-    private bool isOpen = false; // Состояние ворот
-
+    public Animator doorAnimator; 
+    private bool isOpen = false;
+    bool corotineIsDone = true;
     private void Start()
     {
-        isOpen = false; // Устанавливаем состояние на "закрыто"
+        isOpen = false; 
         if (doorAnimator != null)
         {
-            doorAnimator.SetTrigger("Close"); // Запускаем анимацию закрытия
+            doorAnimator.SetTrigger("Close"); 
         }
         else
         {
@@ -21,22 +21,26 @@ public class OpenCloseDoors : MonoBehaviour
 
     public void Toggle()
     {
-        if (isOpen)
+        if(corotineIsDone)
         {
-            Close(); // Закрываем ворота
+            if (isOpen)
+            {
+                Close();
+            }
+            else
+            {
+                Open();
+            }
         }
-        else
-        {
-            Open(); // Открываем ворота
-        }
+        
     }
 
     private void Open()
     {
-        isOpen = true; // Устанавливаем состояние на "открыто"
+        isOpen = true;
         if (doorAnimator != null)
         {
-            doorAnimator.SetTrigger("Open"); // Запускаем анимацию открытия
+            doorAnimator.SetTrigger("Open"); 
         }
         else
         {
@@ -59,11 +63,13 @@ public class OpenCloseDoors : MonoBehaviour
     }
     IEnumerator WaitCloseTrime()
     {
+        corotineIsDone = false;
         yield return new WaitForSeconds(2);
-        isOpen = false; // Устанавливаем состояние на "закрыто"
+        corotineIsDone = true;
+        isOpen = false; 
         if (doorAnimator != null)
         {
-            doorAnimator.SetTrigger("Close"); // Запускаем анимацию закрытия
+            doorAnimator.SetTrigger("Close"); 
         }
         else
         {

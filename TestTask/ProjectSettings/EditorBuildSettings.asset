@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Brick garages/Brick garages.unity
+    guid: 7f4f4d6dce99d5e428d5340635b0e9c6
   m_configObjects: {}
